@@ -7,7 +7,7 @@
   --btn:#F2F4F6; --btn-hover:#E5E8EB; --btn-text:#333D4B;
   --icon:#6B7684;
   --map-bg:#E8F3FF; --map-land:#C9E2FF; --map-h1:#90C2FF; --map-h2:#64A8FF; --map-h3:#3182F6; --map-line:#FFFFFF; --map-water:#1B64DA; --map-water-text:#FFFFFF;
-  --glass:rgba(255,255,255,.5); --glass-strong:rgba(255,255,255,.62); --glass-edge:rgba(255,255,255,.9); --glass-shadow:0 8px 32px rgba(0,27,55,.10);
+  --glass:rgba(255,255,255,.5); --glass-strong:rgba(255,255,255,.62); --glass-edge:rgba(255,255,255,.9); --glass-shadow:0 8px 32px rgba(0,27,55,.10); --hub-bg:#F2F4F6;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
@@ -19,7 +19,7 @@
     --btn:#32343D; --btn-hover:#3E3F49; --btn-text:#FFFFFF;
     --icon:#888D97;
     --map-bg:#16161A; --map-land:#24334F; --map-h1:#29518E; --map-h2:#2562B9; --map-h3:#3182F6; --map-line:#16161A; --map-water:#1C2331; --map-water-text:#7EB8F7;
-    --glass:rgba(42,43,49,.5); --glass-strong:rgba(26,26,31,.66); --glass-edge:rgba(214,224,239,.18); --glass-shadow:0 8px 32px rgba(0,0,0,.40);
+    --glass:rgba(42,43,49,.5); --glass-strong:rgba(26,26,31,.66); --glass-edge:rgba(214,224,239,.18); --glass-shadow:0 8px 32px rgba(0,0,0,.40); --hub-bg:#16161A;
     color-scheme:dark;
   }
 }
@@ -31,7 +31,7 @@
   --btn:#32343D; --btn-hover:#3E3F49; --btn-text:#FFFFFF;
   --icon:#888D97;
   --map-bg:#16161A; --map-land:#24334F; --map-h1:#29518E; --map-h2:#2562B9; --map-h3:#3182F6; --map-line:#16161A; --map-water:#1C2331; --map-water-text:#7EB8F7;
-  --glass:rgba(42,43,49,.5); --glass-strong:rgba(26,26,31,.66); --glass-edge:rgba(214,224,239,.18); --glass-shadow:0 8px 32px rgba(0,0,0,.40);
+  --glass:rgba(42,43,49,.5); --glass-strong:rgba(26,26,31,.66); --glass-edge:rgba(214,224,239,.18); --glass-shadow:0 8px 32px rgba(0,0,0,.40); --hub-bg:#16161A;
   color-scheme:dark;
 }
 
@@ -59,17 +59,20 @@ h1,h2,h3,p{margin:0}
 @media (min-width:768px){ .cards{grid-template-columns:1fr 1fr} .page.wide{max-width:1120px; padding:0 24px 80px} .hub-head{padding:80px 0 48px} .hub-head h1{font-size:48px; line-height:1.35} }
 .card{display:flex; flex-direction:column; border-radius:24px; padding:24px; transition:transform .2s ease, background-color .2s ease}
 .card:active{transform:scale(.98)}
-.card.tone-0{background:var(--tint)}
-.card.tone-1{background:var(--chip)}
+.card.tone-0,.card.tone-1{background:var(--glass); -webkit-backdrop-filter:blur(20px) saturate(1.6); backdrop-filter:blur(20px) saturate(1.6); box-shadow:inset 0 0 0 1px var(--glass-edge), var(--glass-shadow)}
 .card .ill{display:block; width:128px; height:104px; margin:0 0 16px auto}
 .card h2{font-size:24px; line-height:1.4; letter-spacing:-0.01em; font-weight:700; color:var(--heading)}
 .card p{margin-top:4px; font-size:15px; color:var(--text)}
 .card .row{margin-top:auto; padding-top:20px; display:flex; align-items:center; justify-content:space-between}
 .count{font-size:32px; line-height:1.4; font-weight:700; color:var(--heading); letter-spacing:-0.02em; font-variant-numeric:tabular-nums}
 .count small{font-size:17px; font-weight:600; margin-left:2px}
-.go{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--link); transition:background-color .2s ease}
+.go{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--glass-strong); box-shadow:inset 0 0 0 1px var(--glass-edge); color:var(--link); transition:background-color .2s ease}
 .card:hover .go{background:var(--tint-2)}
-.soon{margin-top:16px; border-radius:24px; padding:20px 24px; border:1px dashed var(--divider); font-size:15px; color:var(--text-sub)}
+.soon{margin-top:16px; border-radius:24px; padding:20px 24px; background:var(--glass); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); box-shadow:inset 0 0 0 1px var(--glass-edge); font-size:15px; color:var(--text)}
+body[data-page="hub"]{background:var(--hub-bg)}
+body[data-page="hub"]::before{content:''; position:fixed; inset:-24px; z-index:-1; background:url(hub-map.jpg) center/cover no-repeat; filter:blur(6px)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) body[data-page="hub"]::before{filter:blur(6px) invert(.9) hue-rotate(180deg) brightness(.7)} }
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){ .card.tone-0,.card.tone-1,.soon{background:var(--bg)} }
 
 /* ---------- list page: map behind, glass sheet in front ---------- */
 body.has-map{background:var(--map-bg)}

@@ -42,7 +42,7 @@ async function renderHub() {
   document.getElementById('hello').textContent = site.greeting;
   document.getElementById('title').innerHTML = esc(site.title).replace(/의 /, '의<br>');
   document.getElementById('cards').innerHTML = cols.map((c, i) => `
-    <a class="card tone-${i % 2}" href="${c.id === 'restaurants' ? 'map/' : 'list.html?c=' + encodeURIComponent(c.id)}">
+    <a class="card tone-${i % 2}" href="${c.id === 'restaurants' ? 'map/' : c.id === 'cafes' ? 'map/?c=cafes' : 'list.html?c=' + encodeURIComponent(c.id)}">
       ${ill(c.kind)}
       <h2>${esc(c.title)}</h2>
       <p>${esc(c.summary)}</p>
