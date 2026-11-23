@@ -1,4 +1,4 @@
-import json, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.parse, urllib.request
 DATA = sys.argv[1]; OUT = sys.argv[2]
 UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
 norm = lambda t: re.sub(r'[\s·\-_()]+', '', t).lower()
@@ -20,14 +20,15 @@ def search(q):
         if o['id'] in seen: continue
         seen.add(o['id']); uniq.append(o)
     return uniq
-results = {}
+results = json.load(open(OUT, encoding='utf-8')) if os.path.exists(OUT) else {}
 for cid in ('restaurants', 'cafes'):
     c = json.load(open(f'{DATA}/{cid}.json', encoding='utf-8'))
     for p in c['places']:
         if p['region'] not in ('강동', ''): continue
-        q = f"{p['name']} {p['area']}" if p['area'] else f"{p['name']} 강동구"
+        q = p.get('mapQuery') or (f"{p['name']} {p['area']}" if p['area'] else f"{p['name']} 강동구")
+        if results.get(f"{cid}/{p['name']}", {}).get('query') == q: continue
         try: cands = search(q)
-        except Exception as e: cands = []; print('ERR', p['name'], e, file=sys.stderr)
+        except Exception as e: print('ERR', p['name'], e, file=sys.stderr); continue
         pick = None
         for o in cands:
             if '강동구' in o['address'] and (norm(p['name']) in norm(o['name']) or norm(o['name']) in norm(p['name'])):

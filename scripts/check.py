@@ -63,6 +63,28 @@ for cid in listed:
             print(f"  참고 {where}: area '{p['area']}' 가 있는데 region 이 비어 있음")
     print(f"{cid}: {len(c.get('places', []))}곳")
 
+# 지도 화면은 data 가 아니라 map/*-data.js 를 읽는다. scripts/build_map_lists.py 를 다시 돌리지 않으면 여기서 걸린다
+MAP_LISTS = {"restaurants": "list-data.js", "cafes": "cafes-data.js"}
+for cid, fname in MAP_LISTS.items():
+    js = ROOT / "map" / fname
+    if not js.exists() or not (DATA / f"{cid}.json").exists():
+        err(f"map/{fname} 또는 data/{cid}.json 없음")
+        continue
+    lst = json.loads(re.search(r"=\s*(\{.*\})\s*;?\s*$", js.read_text(encoding="utf-8"), re.S).group(1))
+    col = json.loads((DATA / f"{cid}.json").read_text(encoding="utf-8"))
+    want = [(p["name"], p["mentions"], p["area"], p["note"]) for p in col["places"]]
+    have = [(p["name"], p["m"], p["area"], p["note"]) for p in lst["places"]]
+    if want != have:
+        err(f"map/{fname} 가 data/{cid}.json 과 다름. python3 scripts/build_map_lists.py 를 돌릴 것")
+    geo = json.loads((ROOT / "tools/map-build/geo-results.json").read_text(encoding="utf-8"))
+    picked = {p["name"] for p in col["places"] if (geo.get(f"{cid}/{p['name']}") or {}).get("pick")}
+    if picked != {p["name"] for p in lst["places"] if "x" in p}:
+        err(f"map/{fname} 의 핀이 geo-results.json 과 다름. python3 scripts/build_map_lists.py 를 돌릴 것")
+    for p in lst["places"]:
+        if "x" in p and not p.get("addr"):
+            err(f"map/{fname} {p['name']}: 지도 핀이 있는데 addr 없음")
+    print(f"map/{fname}: 지도 핀 {sum('x' in p for p in lst['places'])}곳 / {len(lst['places'])}곳")
+
 if errors:
     print("\n오류 " + str(len(errors)) + "건")
     for e in errors:
