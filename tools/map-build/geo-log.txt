@@ -1,0 +1,109 @@
+OK restaurants/다람 -> 다람 강동본점 | 서울 강동구 성내동 443
+-- restaurants/서가네 -> 서가네 행복한 족발&호프(서울 송파구 방이동 1)
+OK restaurants/소문난칼국수 -> 소문난칼국수 | 서울 강동구 길동 454-1
+-- restaurants/송파감자국 -> 
+-- restaurants/옥돌현옥 -> 
+-- restaurants/119닭발 -> 
+OK restaurants/Yup -> YUP | 서울 강동구 성내동 435-12
+-- restaurants/갈비도락 -> 
+-- restaurants/강동유황오리 -> 
+OK restaurants/개성김치손만두 -> 개성김치손만두 | 서울 강동구 고덕동 635-3
+-- restaurants/고든램지버거 -> 고든램지버거 롯데월드몰점(서울 송파구 신천동 2)
+OK restaurants/군산식당 -> 군산식당 | 서울 강동구 천호동 410-159
+-- restaurants/길동역 뼈해장국집 -> 
+-- restaurants/꽃누리들밥 -> 
+OK restaurants/다원 -> 다원 | 서울 강동구 명일동 312-48
+-- restaurants/달리감자탕 -> 
+OK restaurants/당산오돌 -> 당산오돌 길동점 | 서울 강동구 길동 415-18
+-- restaurants/대동면옥 -> 
+OK restaurants/대원왕족발보쌈 -> 대원왕족발보쌈 | 서울 강동구 성내동 438-11
+-- restaurants/데니쉬숯불바베큐 -> 
+-- restaurants/라라포쌀국수 -> 라라포 분짜 쌀국수(서울 강동구 길동 38)
+OK restaurants/루틴 -> 루틴 | 서울 강동구 천호동 293-17
+OK restaurants/멘야세븐 -> 멘야세븐 | 서울 강동구 길동 396-13
+OK restaurants/멸치집 -> 멸치집 천호점 | 서울 강동구 성내동 12-35
+-- restaurants/명일닭발 -> 
+-- restaurants/모이세소문난토종순대국 -> 
+-- restaurants/별미곱창 -> 
+OK restaurants/별미손칼국수 -> 별미손칼국수 | 서울 강동구 명일동 312-239
+-- restaurants/본디 -> 
+OK restaurants/봉래면옥 -> 봉래면옥 | 서울 강동구 길동 227-1
+-- restaurants/부산화로양곱창 -> 원조부산화로양곱창 송파구청(서울 송파구 방이동 6)
+-- restaurants/부일갈매기 -> 
+-- restaurants/빵긋 -> 
+OK restaurants/삼팔광어땡 -> 삼팔광어땡 | 서울 강동구 암사동 493-9
+-- restaurants/서령 -> 
+OK restaurants/서우소 -> 서우소 | 서울 강동구 둔촌동 427-3
+-- restaurants/서울콩비지 -> 
+OK restaurants/석내빵집 -> 석내빵집 | 서울 강동구 성내동 421-18
+OK restaurants/석촌오리 -> 석촌오리 | 서울 강동구 둔촌동 602-8
+OK restaurants/선사짬뽕 -> 선사짬뽕 | 서울 강동구 길동 250
+-- restaurants/선수촌가든 -> 선수촌가든 올림픽공원본점(서울 송파구 오금동 6)
+-- restaurants/선호커피로스터스 -> 
+-- restaurants/세꼬시 -> 
+-- restaurants/세벽네시 -> 
+-- restaurants/세인양꼬치 -> 
+OK restaurants/셀프하우스 -> 셀프하우스 | 서울 강동구 성내동 595
+-- restaurants/소문난순대국왕족발 -> 
+OK restaurants/숙이네돈까스 -> 숙이네 | 서울 강동구 길동 345-1
+-- restaurants/신양로스터스 -> 신양로스터스(서울 송파구 송파동 4)
+OK restaurants/아케루 -> 아케루 | 서울 강동구 명일동 351-30 1층(, 민성빌딩)
+-- restaurants/앨리스리틀이태리 -> 엘리스리틀이태리(서울 송파구 송파동 8)
+-- restaurants/영남순대국 -> 영남순대국 송파직영점(서울 송파구 풍납동 1)
+OK restaurants/영화정 -> 영화정해장국 | 서울 강동구 길동 413-20
+OK restaurants/오뜨르베이커리 -> 오뜨르베이커리 | 서울 강동구 성내동 83-1
+-- restaurants/오린지 -> 오린지(서울 송파구 송파동 2)
+OK restaurants/오베르캄프 -> 오베르캄프 본점 | 서울 강동구 성내동 461-12
+-- restaurants/오베베 -> 오베베베이커리(서울 송파구 송파동 2)
+-- restaurants/오쥬리 사랑채 -> 오쥬리 사랑채(경기 하남시 망월동 1)
+OK restaurants/오징어포차 -> 오징어포차 | 서울 강동구 천호동 397-399
+-- restaurants/오케이짬뽕 -> 
+-- restaurants/온달순대국 -> 
+-- restaurants/우리정육식당 -> 
+-- restaurants/운치 -> 운치(경기 하남시 망월동 1)
+-- restaurants/원조팔당칼제비 -> 팔당원조칼제비 상일점(서울 강동구 상일동 3)
+-- restaurants/유천칡냉면 -> 
+OK restaurants/이한진숙성회 -> 이한진숙성회 | 서울 강동구 천호동 393-14
+OK restaurants/인심숯불돼지집 -> 인심숯불돼지집 | 서울 강동구 길동 415-16
+-- restaurants/임태연 닭발 -> 
+-- restaurants/장어나루세 -> 
+OK restaurants/장원닭한마리 -> 장원닭한마리 본점 | 서울 강동구 천호동 233-148
+-- restaurants/장칼집 -> 
+OK restaurants/전주감자탕 -> 전주감자탕 명일점 | 서울 강동구 명일동 345-18
+OK restaurants/제주덕구 -> 제주덕구 상일동점 | 서울 강동구 상일동 286 1층 제주덕구 점
+OK restaurants/족발선생 -> 족발선생 | 서울 강동구 천호동 415-27
+-- restaurants/쥬뗑뷔뜨 -> 
+OK restaurants/지미스 테이블 -> 지미스테이블 | 서울 강동구 길동 363-15
+OK restaurants/짝꿍제과 -> 짝꿍제과 | 서울 강동구 성내동 526-6
+OK restaurants/커피몽타주 -> 커피몽타주 | 서울 강동구 성내동 555-5
+OK restaurants/탁이담 -> 탁이담 | 서울 강동구 성내동 145-5
+OK restaurants/탄다타 -> 탄다타 | 서울 강동구 성내동 428-2
+-- restaurants/태백식당 -> 태백식당(서울 송파구 풍납동 4)
+OK restaurants/편편집 -> 편편집 길동점 | 서울 강동구 길동 385-10
+-- restaurants/풍년상회 -> 
+OK restaurants/할머니추어탕 -> 할머니추어탕 | 서울 강동구 명일동 61
+OK restaurants/해주냉면 -> 해주냉면 강동 딜리버리점 | 서울 강동구 천호동 166-64
+-- restaurants/허심탄회 -> 
+OK restaurants/호미스피자 -> 호미스피자 강동점 | 서울 강동구 길동 79-2
+-- restaurants/황도바지락손칼국수 -> 
+OK restaurants/회전포차 -> 회전포차 | 서울 강동구 암사동 511
+OK restaurants/흑돼지백돼지 -> 제주흑돼지백돼지 | 서울 강동구 암사동 421-136
+-- cafes/cafe433 -> 
+OK cafes/꼬메131 -> 꼬메131 | 서울 강동구 암사동 675
+OK cafes/더브렉퍼스트클럽 -> 더브렉퍼스트클럽 | 서울 강동구 천호동 335-30
+OK cafes/미도리카페 -> 미도리카페 강동성내점 | 서울 강동구 성내동 500
+OK cafes/스윗솔트 -> 스윗솔트 | 서울 강동구 명일동 222-3
+OK cafes/언톨드 -> 언톨드 | 서울 강동구 성내동 112-35
+OK cafes/오뜨르 -> 오뜨르베이커리 | 서울 강동구 성내동 83-1
+OK cafes/차덕분 -> 차덕분 서울 강동점 | 서울 강동구 상일동 341-5
+OK cafes/채스우드커피 -> 채스우드커피 | 서울 강동구 성내동 434-20
+-- cafes/카페 서울라떼 -> 
+OK cafes/카페이유 -> 카페이유 암사본점 | 서울 강동구 암사동 461-11
+-- cafes/커피레시피 -> 
+OK cafes/커피몽타주 -> 커피몽타주 | 서울 강동구 성내동 555-5
+OK cafes/쿰베오 -> cafe쿰베오 | 서울 강동구 길동 83-4
+-- cafes/토미커트 -> 
+OK cafes/토미커피 -> 토미커피서울 | 서울 강동구 천호동 157-3
+OK cafes/파트원나이스 -> 파트원나이스 | 서울 강동구 천호동 321-16
+OK cafes/포니베이커리 -> 포니베이커리 | 서울 강동구 천호동 331-24
+-- cafes/포레포레 -> 

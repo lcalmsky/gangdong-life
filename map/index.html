@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>맛집 지도 · 꾸꾸와 촌초니의 강동라이프</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --land:#FFF6EC; --land-out:#F6EADC; --water:#9FD8F5; --water-edge:#7CC4EC; --green:#C9EDC4; --green-edge:#B3E0AC;
+  --road-major:#FFFFFF; --road-case:#F0D9C2; --road-minor:#FFFFFF; --gd-edge:#FF8A65; --dong-line:#E9C9AE;
+  --ink:#2B2320; --ink-soft:#6E5F57; --label-halo:#FFF6EC; --dong-ink:#A0522D; --river-ink:#2F86BF;
+  --pin:#FF6B57; --pin-hot:#FF3D7F; --pin-edge:#FFFFFF; --cluster:#7B61FF;
+  --glass:rgba(255,255,255,.58); --glass-edge:rgba(255,255,255,.85); --glass-shadow:0 8px 32px rgba(120,70,40,.16);
+  --chip:#FFE3D6; --chip-ink:#B4412C; --btn:#2B2320; --btn-ink:#fff;
+}
+body[data-t="mint"]{--land:#F3FBF8;--land-out:#F3FBF8;--water:#8EDBF2;--water-edge:#6FCDEA;--green:#BDEFCB;--green-edge:#A6E4B8;--road-major:#FFFFFF;--road-case:#D8ECE5;--road-minor:#FFFFFF;--label-halo:#F3FBF8;--dong-ink:#16876B;--river-ink:#1C8DB8;--pin:#FF5A5F;--pin-hot:#FF2E7E;--cluster:#6C5CE7;--chip:#DDF5EC;--chip-ink:#16876B}
+body[data-t="lavender"]{--land:#F7F4FF;--land-out:#F7F4FF;--water:#A6D6FF;--water-edge:#8AC6FA;--green:#CDEFD6;--green-edge:#B6E5C2;--road-major:#FFFFFF;--road-case:#E4DCF8;--road-minor:#FFFFFF;--label-halo:#F7F4FF;--dong-ink:#6A4BD8;--river-ink:#2F7FD0;--pin:#FF4D8D;--pin-hot:#FF2D6F;--cluster:#7C5CFF;--chip:#ECE5FF;--chip-ink:#6A4BD8}
+body[data-t="clean"]{--land:#F2F4F6;--land-out:#F2F4F6;--water:#9CD2FF;--water-edge:#7FC2FA;--green:#CBF0D4;--green-edge:#B3E6C0;--road-major:#FFFFFF;--road-case:#DDE2E8;--road-minor:#FFFFFF;--label-halo:#F2F4F6;--dong-ink:#4E5968;--river-ink:#1B7FD6;--pin:#FF5B4D;--pin-hot:#FF2E63;--cluster:#3182F6;--chip:#E8F3FF;--chip-ink:#1B64DA}
+body[data-t="pop"]{--land:#FFFDF4;--land-out:#FFFDF4;--water:#5EC8F2;--water-edge:#43B9E8;--green:#A6E8B0;--green-edge:#8EDC9A;--road-major:#FFFFFF;--road-case:#F2E4C4;--road-minor:#FFFFFF;--label-halo:#FFFDF4;--dong-ink:#E0603A;--river-ink:#0F86B8;--pin:#FF3B6B;--pin-hot:#E8175D;--cluster:#FF9F1C;--chip:#FFEFD0;--chip-ink:#C2570C}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;background:var(--land-out);color:var(--ink);overflow:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+#map{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+#map.dragging{cursor:grabbing}
+.water{fill:var(--water);stroke:var(--water-edge);stroke-width:1}
+.green{fill:var(--green);stroke:var(--green-edge);stroke-width:.6}
+.mask{fill:var(--land-out);opacity:.75}
+.rd{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.rd.case{stroke:var(--road-case)}
+.rd.mw{stroke:var(--road-major)} .rd.pr{stroke:var(--road-major)} .rd.sc{stroke:var(--road-minor)}
+.gd{fill:none;stroke:var(--gd-edge);stroke-width:2.5;stroke-dasharray:7 5;stroke-linecap:round}
+.dl{fill:none;stroke:var(--dong-line);stroke-width:1.2;stroke-dasharray:3 4}
+.lbl{pointer-events:none;paint-order:stroke;stroke:var(--label-halo);stroke-width:4px;stroke-linejoin:round;font-family:inherit}
+.l-dong{font-size:15px;font-weight:700;fill:var(--dong-ink);letter-spacing:-.02em}
+.l-area{font-size:14px;font-weight:600;fill:var(--ink-soft)}
+.l-river{font-size:16px;font-weight:700;fill:var(--river-ink);letter-spacing:.3em}
+.l-st{font-size:11.5px;font-weight:600;fill:var(--ink-soft)}
+.st-dot{fill:#fff;stroke:#7B61FF;stroke-width:2.2}
+.far .l-st,.far .st-g{display:none}
+.pin{cursor:pointer}
+.pin .hit{fill:transparent}
+.pin .body{transform-box:fill-box;transform-origin:50% 100%;transition:transform .15s ease}
+.pin.on .body{transform:scale(1.25)}
+.pin path{fill:var(--pin);stroke:var(--pin-edge);stroke-width:2.4;filter:drop-shadow(0 3px 4px rgba(120,40,20,.3))}
+.pin.hot path{fill:var(--pin-hot)}
+.pin circle.dot{fill:#fff}
+.pin text{font-size:12px;font-weight:800;fill:var(--pin-hot);font-family:inherit}
+.pin .nm{fill:var(--ink);font-size:12px;font-weight:700;paint-order:stroke;stroke:var(--label-halo);stroke-width:3.5px;stroke-linejoin:round}
+.far .pin .nm{display:none}
+.cl{cursor:pointer}
+.cl circle{fill:var(--cluster);stroke:#fff;stroke-width:3;filter:drop-shadow(0 3px 6px rgba(60,30,120,.35))}
+.cl text{fill:#fff;font-size:14px;font-weight:800;font-family:inherit}
+
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--glass-edge);box-shadow:var(--glass-shadow)}
+.top{position:fixed;z-index:5;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));display:flex;align-items:center;gap:8px;pointer-events:none}
+.top>*{pointer-events:auto}
+.back{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;color:var(--ink);text-decoration:none}
+.title{height:48px;border-radius:16px;padding:0 16px;display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700}
+.title span{font-size:14px;font-weight:600;color:var(--chip-ink);background:var(--chip);padding:3px 9px;border-radius:999px}
+.zoom{position:fixed;z-index:5;right:max(12px,env(safe-area-inset-right));bottom:calc(max(16px,env(safe-area-inset-bottom)) + 16px);display:flex;flex-direction:column;border-radius:16px;overflow:hidden;transition:bottom .25s ease}
+.has-card .zoom{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 196px)}
+.zoom button{width:48px;height:48px;border:0;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.zoom button+button{border-top:1px solid var(--glass-edge)}
+.card{position:fixed;z-index:6;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));border-radius:24px;padding:20px 20px 16px;transform:translateY(calc(100% + 40px));transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.has-card .card{transform:none}
+.card .x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:var(--ink-soft);display:grid;place-items:center;cursor:pointer;border-radius:12px}
+.card .cat{font-size:13px;font-weight:600;color:var(--chip-ink)}
+.card h2{margin-top:2px;font-size:22px;line-height:1.35;font-weight:800;letter-spacing:-.02em;padding-right:40px}
+.card .meta{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.card .note{margin-top:8px;font-size:15px;line-height:1.5}
+.card .badge{display:inline-block;margin-left:6px;vertical-align:3px;font-size:12px;font-weight:700;color:#fff;background:var(--pin-hot);padding:2px 8px;border-radius:999px}
+.card a.go{margin-top:14px;height:48px;border-radius:14px;background:var(--btn);color:var(--btn-ink);display:flex;align-items:center;justify-content:center;gap:6px;font-size:16px;font-weight:700;text-decoration:none}
+@media (min-width:768px){
+  .card{left:auto;right:24px;bottom:24px;width:380px}
+  .has-card .zoom{bottom:40px;right:420px}
+}
+</style>
+</head>
+<body>
+<svg id="map" aria-label="강동구 맛집 지도"><g id="world"></g><g id="ui"></g></svg>
+
+<header class="top">
+  <a class="back glass" href="#" aria-label="처음으로"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+  <div class="title glass">맛집 지도<span id="cnt"></span></div>
+</header>
+
+<div class="zoom glass">
+  <button type="button" id="zin" aria-label="확대"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button type="button" id="zout" aria-label="축소"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+  <button type="button" id="zfit" aria-label="강동 전체 보기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+
+<section class="card glass" id="card" aria-hidden="true">
+  <button class="x" type="button" id="cx" aria-label="닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <p class="cat" id="ccat"></p>
+  <h2 id="cname"></h2>
+  <p class="meta" id="caddr"></p>
+  <p class="note" id="cnote"></p>
+  <a class="go" id="cgo" href="#" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12s-8-7-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>네이버 지도에서 열기</a>
+</section>
+
+<script src="map-data.js"></script>
+<script>
+document.body.dataset.t = new URLSearchParams(location.search).get('t') || 'pop';
+const NS = 'http://www.w3.org/2000/svg';
+const $ = (id) => document.getElementById(id);
+const el = (tag, attrs, text) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; return n; };
+const svg = $('map'), world = $('world'), ui = $('ui');
+const LNG0 = 127.085, LAT0 = 37.59, K = Math.cos(37.545 * Math.PI / 180), SC = 10000;
+const PX = (lng) => (lng - LNG0) * K * SC, PY = (lat) => (LAT0 - lat) * SC;
+
+world.append(el('rect', { x: -2000, y: -2000, width: 5000, height: 5000, fill: 'var(--land)' }));
+world.append(el('path', { d: MAP.green, class: 'green' }));
+world.append(el('path', { d: MAP.water, class: 'water' }));
+const roadEls = [];
+[['secondary', 'sc', 3], ['primary', 'pr', 5], ['trunk', 'mw', 6], ['motorway', 'mw', 7]].forEach(([k, c, w]) => {
+  const cs = el('path', { d: MAP.roads[k], class: 'rd case' }); const fg = el('path', { d: MAP.roads[k], class: 'rd ' + c });
+  world.append(cs); world.append(fg); roadEls.push([cs, w + 2], [fg, w]);
+});
+
+const floaters = [];
+const label = (cls, x, y, text) => { const t = el('text', { class: 'lbl ' + cls, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, text); ui.append(t); floaters.push({ el: t, x, y, w: text.length * 15 + 6, area: true }); };
+MAP.dongs.forEach((d) => label('l-dong', d.x, d.y, d.n));
+[['송파구', 127.112, 37.512], ['하남시', 127.188, 37.548], ['광진구', 127.093, 37.552], ['구리시', 127.128, 37.581]].forEach(([n, a, b]) => label('l-area', PX(a), PY(b), n));
+label('l-river', PX(127.1332), PY(37.5672), '한강');
+MAP.stations.forEach((s) => {
+  const g = el('g', { class: 'st-g' });
+  g.append(el('circle', { r: 4.5, class: 'st-dot' }));
+  g.append(el('text', { class: 'lbl l-st', y: 14, 'text-anchor': 'middle' }, s.n + '역'));
+  ui.append(g); floaters.push({ el: g, x: s.x, y: s.y });
+});
+
+const P = MAP.places.slice().sort((a, b) => a.y - b.y);
+$('cnt').textContent = P.length + '곳';
+const pinLayer = el('g', {}); ui.append(pinLayer);
+const PIN_D = 'M0 0C-6-10-15-17-15-27a15 15 0 1 1 30 0C15-17 6-10 0 0Z';
+P.forEach((p, i) => {
+  const g = el('g', { class: 'pin' + (p.m >= 2 ? ' hot' : ''), role: 'button', tabindex: 0, 'aria-label': p.name });
+  g.append(el('circle', { class: 'hit', cx: 0, cy: -24, r: 24 }));
+  const body = el('g', { class: 'body' });
+  body.append(el('path', { d: PIN_D }));
+  if (p.m >= 2) body.append(el('circle', { class: 'dot', cx: 0, cy: -27, r: 9 })), body.append(el('text', { x: 0, y: -23, 'text-anchor': 'middle' }, p.m));
+  else body.append(el('circle', { class: 'dot', cx: 0, cy: -27, r: 5 }));
+  g.append(body);
+  p.nm = el('text', { class: 'nm', x: 0, y: 16, 'text-anchor': 'middle' }, p.name); g.append(p.nm);
+  g.addEventListener('click', (e) => { if (!moved) { e.stopPropagation(); open(i); } });
+  g.addEventListener('keydown', (e) => { if (e.key === 'Enter') open(i); });
+  p.g = g; pinLayer.append(g);
+});
+const clLayer = el('g', {}); ui.append(clLayer);
+
+const st = { x: 0, y: 0, s: 1 }; let W = 0, H = 0, fitS = 1, sel = -1;
+const GD = { x0: 1e9, y0: 1e9, x1: -1e9, y1: -1e9 };
+MAP.dongs.concat(P).forEach((d) => { GD.x0 = Math.min(GD.x0, d.x); GD.x1 = Math.max(GD.x1, d.x); GD.y0 = Math.min(GD.y0, d.y); GD.y1 = Math.max(GD.y1, d.y); });
+
+function layout() {
+  const inv = 1 / st.s;
+  roadEls.forEach(([e, w]) => e.setAttribute('stroke-width', (w * Math.min(1.6, Math.max(.55, Math.sqrt(st.s / fitS))) * inv).toFixed(3)));
+  const sx = (x) => x * st.s + st.x, sy = (y) => y * st.s + st.y;
+  floaters.forEach((f) => f.el.setAttribute('transform', `translate(${sx(f.x).toFixed(1)},${sy(f.y).toFixed(1)})`));
+  const rel = st.s / fitS;
+  svg.classList.toggle('far', rel < 1.6);
+  clLayer.replaceChildren();
+  const R = 44;
+  let groups = P.map((p, i) => { p.sx = sx(p.x); p.sy = sy(p.y); return { sx: p.sx, sy: p.sy, items: [i] }; });
+  if (rel < 4.5) {
+    for (let merged = true; merged;) {
+      merged = false;
+      outer: for (let a = 0; a < groups.length; a++) for (let b = a + 1; b < groups.length; b++) {
+        const A = groups[a], B = groups[b];
+        if (Math.hypot(A.sx - B.sx, A.sy - B.sy) < R) {
+          const n = A.items.length + B.items.length;
+          A.sx = (A.sx * A.items.length + B.sx * B.items.length) / n; A.sy = (A.sy * A.items.length + B.sy * B.items.length) / n;
+          A.items.push(...B.items); groups.splice(b, 1); merged = true; break outer;
+        }
+      }
+    }
+  }
+  P.forEach((p) => { p.g.style.display = 'none'; p.nm.style.display = ''; });
+  const shown = [], boxes = [];
+  groups.forEach((g) => {
+    if (g.items.length === 1 || g.items.includes(sel)) {
+      g.items.forEach((i) => { const p = P[i]; p.g.style.display = ''; p.g.setAttribute('transform', `translate(${p.sx.toFixed(1)},${p.sy.toFixed(1)})`); shown.push(p); });
+      return;
+    }
+    const c = el('g', { class: 'cl', transform: `translate(${g.sx.toFixed(1)},${g.sy.toFixed(1)})`, role: 'button', 'aria-label': g.items.length + '곳 모여 있음, 눌러서 확대' });
+    const r = 16 + Math.min(10, g.items.length * 1.2);
+    c.append(el('circle', { r })); c.append(el('text', { 'text-anchor': 'middle', 'dominant-baseline': 'central' }, g.items.length));
+    c.addEventListener('click', (e) => { if (moved) return; e.stopPropagation(); zoomTo(g.items); });
+    clLayer.append(c);
+    boxes.push([g.sx - r, g.sy - r, g.sx + r, g.sy + r]);
+  });
+  shown.forEach((p) => boxes.push([p.sx - 16, p.sy - 44, p.sx + 16, p.sy]));
+  shown.slice().sort((a, b) => (b === P[sel]) - (a === P[sel]) || b.m - a.m).forEach((p) => {
+    const w = p.name.length * 12.5 + 8, bx = [p.sx - w / 2, p.sy + 5, p.sx + w / 2, p.sy + 23];
+    const hit = boxes.some((q) => q !== null && bx[0] < q[2] && bx[2] > q[0] && bx[1] < q[3] && bx[3] > q[1]);
+    if (hit && p !== P[sel]) p.nm.style.display = 'none'; else boxes.push(bx);
+  });
+  floaters.forEach((f) => { if (!f.area) return; const x = sx(f.x), y = sy(f.y), b = [x - f.w / 2, y - 10, x + f.w / 2, y + 10];
+    f.el.style.display = boxes.some((q) => b[0] < q[2] && b[2] > q[0] && b[1] < q[3] && b[3] > q[1]) ? 'none' : ''; });
+  if (sel >= 0) pinLayer.append(P[sel].g);
+}
+const apply = () => { world.setAttribute('transform', `translate(${st.x.toFixed(2)} ${st.y.toFixed(2)}) scale(${st.s.toFixed(4)})`); layout(); };
+function measure() { const r = svg.getBoundingClientRect(); W = r.width; H = r.height; svg.setAttribute('viewBox', `0 0 ${W} ${H}`); }
+const padTop = () => 76, padBot = () => (document.body.classList.contains('has-card') ? 230 : 24);
+function fitBox(b, animate, maxRel) {
+  const bw = Math.max(40, b.x1 - b.x0), bh = Math.max(40, b.y1 - b.y0);
+  const pr = W >= 768 && document.body.classList.contains('has-card') ? 420 : 0;
+  let s = Math.min((W - 48 - pr) / bw, (H - padTop() - padBot() - 24) / bh);
+  if (maxRel) s = Math.min(s, fitS * maxRel);
+  go((W - pr) / 2 - (b.x0 + b.x1) / 2 * s, padTop() + (H - padTop() - padBot()) / 2 - (b.y0 + b.y1) / 2 * s + 12, s, animate);
+}
+function computeFit() { fitS = Math.min((W - 48) / (GD.x1 - GD.x0 + 60), (H - 100 - 24) / (GD.y1 - GD.y0 + 60)); }
+let anim = null;
+function go(tx, ty, ts, animate) {
+  if (anim) cancelAnimationFrame(anim);
+  if (!animate || matchMedia('(prefers-reduced-motion: reduce)').matches) { st.x = tx; st.y = ty; st.s = ts; apply(); return; }
+  const fx = st.x, fy = st.y, fs = st.s, t0 = performance.now(), D = 380;
+  const step = (now) => { const p = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - p, 3);
+    st.s = fs * Math.pow(ts / fs, e); st.x = fx + (tx - fx) * e; st.y = fy + (ty - fy) * e; apply();
+    anim = p < 1 ? requestAnimationFrame(step) : null; };
+  anim = requestAnimationFrame(step);
+}
+function zoomTo(items) {
+  const b = { x0: 1e9, y0: 1e9, x1: -1e9, y1: -1e9 };
+  items.forEach((i) => { const p = P[i]; b.x0 = Math.min(b.x0, p.x); b.x1 = Math.max(b.x1, p.x); b.y0 = Math.min(b.y0, p.y); b.y1 = Math.max(b.y1, p.y); });
+  b.x0 -= 20; b.x1 += 20; b.y0 -= 30; b.y1 += 20;
+  fitBox(b, true, 6);
+}
+function zoomAt(px, py, f) {
+  const ns = Math.min(fitS * 8, Math.max(fitS * .7, st.s * f)), r = ns / st.s;
+  st.x = px - (px - st.x) * r; st.y = py - (py - st.y) * r; st.s = ns; apply();
+}
+const card = $('card');
+function open(i) {
+  sel = i; const p = P[i];
+  P.forEach((q) => q.g.classList.toggle('on', q === p));
+  $('ccat').textContent = (p.cat || '').split(',').pop();
+  $('cname').innerHTML = ''; $('cname').append(p.name);
+  if (p.m >= 2) { const b = document.createElement('span'); b.className = 'badge'; b.textContent = p.m + '명 추천'; $('cname').append(b); }
+  $('caddr').textContent = p.addr.replace(/^서울 강동구 /, '');
+  $('cnote').textContent = p.note || ''; $('cnote').hidden = !p.note;
+  $('cgo').href = 'https://map.naver.com/p/search/' + encodeURIComponent(p.name + ' ' + p.addr);
+  document.body.classList.add('has-card'); card.setAttribute('aria-hidden', 'false');
+  const s = Math.max(st.s, fitS * 2.6);
+  const pr = W >= 768 ? 420 : 0;
+  go((W - pr) / 2 - p.x * s, padTop() + (H - padTop() - padBot()) / 2 - p.y * s + 20, s, true);
+}
+function close() { sel = -1; P.forEach((q) => q.g.classList.remove('on')); document.body.classList.remove('has-card'); card.setAttribute('aria-hidden', 'true'); layout(); }
+$('cx').addEventListener('click', close);
+$('zin').addEventListener('click', () => zoomAt(W / 2, H / 2, 1.5));
+$('zout').addEventListener('click', () => zoomAt(W / 2, H / 2, 1 / 1.5));
+$('zfit').addEventListener('click', () => { close(); fitBox(GD, true); });
+
+const pointers = new Map(); let drag = null, moved = false, pinch = null, lastTap = 0;
+svg.addEventListener('pointerdown', (e) => {
+  if (anim) { cancelAnimationFrame(anim); anim = null; }
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) { drag = { cx: e.clientX, cy: e.clientY, x: st.x, y: st.y }; moved = false; svg.classList.add('dragging'); }
+  else if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pointers.forEach((v, id) => { try { svg.setPointerCapture(id); } catch (_) {} }); pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), s: st.s }; drag = null; moved = true; }
+});
+svg.addEventListener('pointermove', (e) => {
+  if (!pointers.has(e.pointerId)) return;
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch && pointers.size === 2) { const [a, b] = [...pointers.values()]; zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d / st.s); return; }
+  if (!drag) return;
+  const dx = e.clientX - drag.cx, dy = e.clientY - drag.cy;
+  if (!moved && Math.abs(dx) + Math.abs(dy) > 6) { moved = true; try { svg.setPointerCapture(e.pointerId); } catch (_) {} }
+  if (moved) { st.x = drag.x + dx; st.y = drag.y + dy; apply(); }
+});
+const endP = (e) => { pointers.delete(e.pointerId); if (pointers.size < 2) pinch = null; if (!pointers.size) { drag = null; svg.classList.remove('dragging'); } };
+svg.addEventListener('pointerup', endP); svg.addEventListener('pointercancel', endP);
+svg.addEventListener('wheel', (e) => { e.preventDefault(); zoomAt(e.clientX, e.clientY, Math.exp(-e.deltaY * .002)); }, { passive: false });
+svg.addEventListener('click', (e) => {
+  if (moved) return;
+  const now = Date.now();
+  if (now - lastTap < 300) { zoomAt(e.clientX, e.clientY, 1.8); lastTap = 0; return; }
+  lastTap = now;
+  if (sel >= 0) close();
+});
+addEventListener('resize', () => { measure(); computeFit(); apply(); });
+measure(); computeFit(); fitBox(GD, false);
+</script>
+</body>
+</html>

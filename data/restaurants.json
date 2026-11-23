@@ -1,0 +1,1203 @@
+{
+ "id": "restaurants",
+ "title": "맛집",
+ "summary": "강동·송파·하남, 동네 사람들이 꼽은 밥집",
+ "kind": "food",
+ "updated": "2026-11-23",
+ "source": {
+  "type": "threads",
+  "url": "https://www.threads.com/@uzzeolsaurus/post/DbI_qfKErMr",
+  "date": "2026-07-24",
+  "memo": "답글 194개 중 로그인 없이 보인 141개만 읽음. self=가게 운영 계정이 단 답글"
+ },
+ "places": [
+  {
+   "name": "다람",
+   "area": "성내동",
+   "region": "강동",
+   "note": "고기랑 김치가 좋다는 평",
+   "mentions": 3,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "장털보설렁탕",
+   "area": "오금동",
+   "region": "송파",
+   "note": "10년 넘게 다닌다는 단골 평, 이전한 뒤 주차가 불편하다는 평도 있음",
+   "mentions": 3,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "서가네",
+   "area": "",
+   "region": "",
+   "note": "기절 닭발, 양념 치킨",
+   "mentions": 2,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "소문난칼국수",
+   "area": "길동",
+   "region": "강동",
+   "note": "",
+   "mentions": 2,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "송파감자국",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 2,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "옥돌현옥",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 2,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "할머니멸치국수",
+   "area": "방이동",
+   "region": "송파",
+   "note": "꼬막도 추천",
+   "mentions": 2,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "119닭발",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "Yup",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "갈비도락",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "갈비로운",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "강동유황오리",
+   "area": "암사역 근처",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "개성김치손만두",
+   "area": "고덕동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "고덕"
+  },
+  {
+   "name": "고든램지버거",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "군산식당",
+   "area": "강동역",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "그리지하우스",
+   "area": "석촌역",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "그릴210",
+   "area": "송파",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "길동역 뼈해장국집",
+   "area": "길동역",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": "길동"
+  },
+  {
+   "name": "깡집",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "꽃누리들밥",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "나무젓가락",
+   "area": "송파 문정역",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "다원",
+   "area": "명일동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "명일"
+  },
+  {
+   "name": "달리감자탕",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "당산오돌",
+   "area": "길동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "대동면옥",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "대원왕족발보쌈",
+   "area": "둔촌동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "둔촌"
+  },
+  {
+   "name": "대장장어",
+   "area": "방이동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "댓츄라이트",
+   "area": "석촌역",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "더불닭",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "더빛남",
+   "area": "송리단길",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "더찹쌀순대국",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "데니쉬숯불바베큐",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "둥둥치킨",
+   "area": "검단산역",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "라라포쌀국수",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "루틴",
+   "area": "암사동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "멘야세븐",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "멘야하나비",
+   "area": "송리단길",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "멸치집",
+   "area": "천호",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "명일닭발",
+   "area": "명일동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "명일"
+  },
+  {
+   "name": "모이세소문난토종순대국",
+   "area": "길동시장",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "미사풍천장어",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "미호",
+   "area": "잠실",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "별미곱창",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "별미손칼국수",
+   "area": "명일동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "명일"
+  },
+  {
+   "name": "복담칼국수",
+   "area": "가락동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "본디",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "봉래면옥",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "부산화로양곱창",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "부일갈매기",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "빵긋",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "삼팔광어땡",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "서령",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "서우소",
+   "area": "둔촌동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "둔촌"
+  },
+  {
+   "name": "서울콩비지",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "석내빵집",
+   "area": "성내동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "석촌오리",
+   "area": "둔촌동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "둔촌"
+  },
+  {
+   "name": "선사짬뽕",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "선수촌가든",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "선호커피로스터스",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "세꼬시",
+   "area": "길동사거리",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "세벽네시",
+   "area": "암사역 근처",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "세인양꼬치",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "셀프하우스",
+   "area": "성내동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "소문난순대국왕족발",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "숙이네돈까스",
+   "area": "길동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "순희네포차",
+   "area": "방이동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "슬라이스피자마켓",
+   "area": "문정동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "신양로스터스",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "아케루",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "앨리스리틀이태리",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "양재닭집둘째아들",
+   "area": "문정동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "여수식당",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "영남순대국",
+   "area": "천호역",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "영화정",
+   "area": "길동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "길동"
+  },
+  {
+   "name": "오뜨르베이커리",
+   "area": "천호",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "오린지",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "오베르캄프",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "오베베",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "오쥬리 사랑채",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "오징어포차",
+   "area": "천호",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "오케이짬뽕",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "온달순대국",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "올더웨이",
+   "area": "송파",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "왁버거",
+   "area": "잠실역 르엘상가",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "왕비성",
+   "area": "하남 검단산 밑",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "우리정육식당",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "운치",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "울산숯불갈비",
+   "area": "가락동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "원조팔당칼제비",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "유천칡냉면",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "이스트베이글",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "이한진숙성회",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "인심숯불돼지집",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "임태연 닭발",
+   "area": "둔촌시장",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "둔촌"
+  },
+  {
+   "name": "장어나루세",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "장원닭한마리",
+   "area": "암사동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "장칼집",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "전주감자탕",
+   "area": "굽은다리",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "전주명가",
+   "area": "잠실역",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "정온",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "제주덕구",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "제주민족",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "족발선생",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "주육일",
+   "area": "석촌동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "쥬뗑뷔뜨",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "지미스 테이블",
+   "area": "강동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "지호한방삼계탕 하남직영점",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "짝꿍제과",
+   "area": "성내동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "청담동순도리",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "청정플러스 수산",
+   "area": "미사역",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "칸코시",
+   "area": "잠실새내",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "커피몽타주",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "킴앤킴칼국수",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "탁이담",
+   "area": "성내동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "탄다타",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "태백식당",
+   "area": "강동구청역",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "토오코",
+   "area": "송리단길",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "팔당냉면",
+   "area": "미사",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "편편집",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "포유티",
+   "area": "방이동",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "풍년상회",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "풍성가든",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "피커스피자",
+   "area": "송파",
+   "region": "송파",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "한판한우곱창구이",
+   "area": "하남시",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "할머니추어탕",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "항아리누룽지백숙",
+   "area": "하남",
+   "region": "하남",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "해주냉면",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "허심탄회",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "호미스피자",
+   "area": "강동점",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "황도바지락손칼국수",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "회전포차",
+   "area": "암사",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "흑돼지백돼지",
+   "area": "암사",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  }
+ ]
+}

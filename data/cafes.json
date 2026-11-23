@@ -1,0 +1,195 @@
+{
+ "id": "cafes",
+ "title": "카페",
+ "summary": "암사·강동역 근처 커피와 디저트",
+ "kind": "cafe",
+ "updated": "2026-11-23",
+ "source": {
+  "type": "threads",
+  "url": "https://www.threads.com/@nukki.dokki/post/DfwGfGvCb4t",
+  "date": "2026-11-15",
+  "memo": "답글 19개 전부 읽음. 모두 1회 언급"
+ },
+ "places": [
+  {
+   "name": "cafe433",
+   "area": "성내동",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "성내"
+  },
+  {
+   "name": "꼬메131",
+   "area": "암사역",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "더브렉퍼스트클럽",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "미도리카페",
+   "area": "",
+   "region": "",
+   "note": "가성비 좋은 스페셜티 커피, 사장님이 친절함",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "스윗솔트",
+   "area": "",
+   "region": "",
+   "note": "브런치 카페",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "언톨드",
+   "area": "",
+   "region": "",
+   "note": "망고말차라떼",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "오뜨르",
+   "area": "",
+   "region": "",
+   "note": "초코바게트, 명란감자",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "차덕분",
+   "area": "상일동",
+   "region": "강동",
+   "note": "홍차크림커피가 시그니처인 티 카페, 한국적인 디저트가 많음",
+   "mentions": 1,
+   "self": true,
+   "dong": "상일"
+  },
+  {
+   "name": "채스우드커피",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "카페 서울라떼",
+   "area": "천호역 현대백화점 지하",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "카페이유",
+   "area": "암사",
+   "region": "강동",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": "암사"
+  },
+  {
+   "name": "커피레시피",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "커피몽타주",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "쿰베오",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "토미커트",
+   "area": "",
+   "region": "",
+   "note": "요즘 뜬다는 평",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "토미커피",
+   "area": "강동역",
+   "region": "강동",
+   "note": "짱맛이라는 평",
+   "mentions": 1,
+   "self": false,
+   "dong": "천호"
+  },
+  {
+   "name": "파트원나이스",
+   "area": "",
+   "region": "",
+   "note": "샌드위치",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "포니베이커리",
+   "area": "",
+   "region": "",
+   "note": "글루텐프리 디저트, 말발굽 모양 티그레, 주말엔 쌀빵",
+   "mentions": 1,
+   "self": true,
+   "dong": ""
+  },
+  {
+   "name": "포레포레",
+   "area": "",
+   "region": "",
+   "note": "",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  },
+  {
+   "name": "프랭크커핀바",
+   "area": "올림픽공원 근처",
+   "region": "송파",
+   "note": "에스프레소가 좋고 위스키와 맥주도 있음",
+   "mentions": 1,
+   "self": false,
+   "dong": ""
+  }
+ ]
+}
